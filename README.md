@@ -239,6 +239,10 @@ void loop()
 
 Na začetku povežemo ESP32 z domačim omrežjem. V kodi imamo spremenljivke `ssid`, `password`, `host` in `port` ki hranijo niz SSID-ja in gesla lokalnega omrežja, IP naslov ki ga bo pridobil ESP32 strežnik ter vrata za dostop iz zunanjega omrežja.  Nato nastavimo vrata strežnika na `5000`. V `setup()` funkciji naprej brezžično povežemo ESP32 na lokalno omrežje, nato pa strežnik poženemo. V `loop()` funkciji čakamo oz. preverjamo, če se je na strežnik povezal odjemalec. V primeru da se je in dobimo nazaj ustrezen HTTP zahtevek, na njega odgovrimo z HTTP odgovorom ki prikaže spletno stran z gumbom. Ko odjemalec prejme HTTP odgovor, lahko ob pritisku gumba vklopi ali izklopi ključavnico oz. elektromagnet. Ob pritisku na gumb se pošlje GET zahtevek. Tega preverimo, če v URL-ju vsebuje `/lock` ali pa `/unlock`. Če vsebuje `/lock`, potem strežnik odgovori s spletno stranjo ki vsebuje gumb *UNLOCK*, hkrati pa nastavi stanje PIN-a 27 na *HIGH*, tako da se elektromagnet vklopi. V nasprotnem primeru, ko dobimo `/unlock`, se prikaže gumb *LOCK*, stanje PIN-a 27 pa se nastavi na *LOW*, torej se elektromagnet izklopi.
 
+
+https://user-images.githubusercontent.com/68665243/176149464-ba055d45-168d-4cec-9e80-e42c1924b5d3.mp4
+
+
 | <img src="./README.assets/website_1.jpeg" alt="website_1" style="zoom:25%;" /><img src="./README.assets/website_2.jpeg" alt="website_2" style="zoom: 25%;" /> |      |
 | :----------------------------------------------------------: | ---- |
 
